@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "declaration": true,
+        "outDir": "dist/esm",
+        "declarationDir": "./dist/dts",
+        "declarationMap": false,
+        "useDefineForClassFields": true,
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "allowJs": true,
+        "checkJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "downlevelIteration": true,
+        "baseUrl": ".",
+        "suppressImplicitAnyIndexErrors": false
+    },
+    "include": ["src"],
+    "exclude": ["src/**/*.test.ts"]
+}
