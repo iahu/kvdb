@@ -53,8 +53,8 @@ function setMany(entities: IterableEntities<[IDBValidKey, any] | IDBValidKey[]>)
     return getStore('readwrite').then(op((store) => map(entities, ([key, value]) => store.put(value, key))));
 }
 
-function getMany<T = any>(entities: IterableEntities<IDBValidKey>): Promise<T[]> {
-    return getStore('readwrite').then(op((store) => map(entities, (key) => store.get(key))));
+function getMany<T extends any[] = any[]>(entities: IterableEntities<IDBValidKey>): Promise<T> {
+    return getStore('readwrite').then(op((store) => map(entities, (key) => store.get(key)))) as Promise<T>;
 }
 
 function removeMany(keys: IterableEntities<IDBValidKey | IDBKeyRange>): Promise<undefined[]> {

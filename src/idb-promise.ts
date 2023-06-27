@@ -55,8 +55,8 @@ export function op<T>(makeRequest: MapStore<IDBRequest<T>> | MapStore<IDBRequest
     };
 }
 
-type Entites<T> = Array<T> | Array<T> | IterableIterator<T>;
-export function map<T, U>(entities: Entites<T>, fn: (entity: T) => U): U[] {
+type Entities<T> = Array<T> | Array<T> | IterableIterator<T>;
+export function map<T, U>(entities: Entities<T>, fn: (entity: T) => U): U[] {
     const results: U[] = [];
     for (const entity of entities) {
         results.push(fn(entity));
