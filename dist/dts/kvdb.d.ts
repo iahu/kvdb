@@ -13,7 +13,7 @@ declare function getAllValues<T = any>(query?: IDBValidKey | IDBKeyRange | undef
 export type IterableEntities<T> = Array<T> | IterableIterator<T>;
 declare function addMany(entities: IterableEntities<[IDBValidKey, any] | IDBValidKey[]>): Promise<IDBValidKey[]>;
 declare function setMany(entities: IterableEntities<[IDBValidKey, any] | IDBValidKey[]>): Promise<IDBValidKey[]>;
-declare function getMany<T = any>(entities: IterableEntities<IDBValidKey>): Promise<T[]>;
+declare function getMany<T extends any[] = any[]>(entities: IterableEntities<IDBValidKey>): Promise<T>;
 declare function removeMany(keys: IterableEntities<IDBValidKey | IDBKeyRange>): Promise<undefined[]>;
 declare const kvdb: {
     getStore: typeof getStore;

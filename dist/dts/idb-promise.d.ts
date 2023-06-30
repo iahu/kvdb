@@ -8,6 +8,6 @@ export declare function getStoreFromDB(dbName: string, storeName: string, option
 export type MapStore<T> = (store: IDBObjectStore) => T;
 export declare function op<T>(makeRequest: MapStore<IDBRequest<T>>): MapStore<Promise<T>>;
 export declare function op<T>(makeRequest: MapStore<IDBRequest<T>[]>): MapStore<Promise<T[]>>;
-type Entites<T> = Array<T> | Array<T> | IterableIterator<T>;
-export declare function map<T, U>(entities: Entites<T>, fn: (entity: T) => U): U[];
+type Entities<T> = Array<T> | Array<T> | IterableIterator<T>;
+export declare function map<T, U>(entities: Entities<T>, fn: (entity: T) => U): U[];
 export {};

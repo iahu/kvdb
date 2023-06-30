@@ -16,7 +16,7 @@ const config = {
             '<rootDir>/__mocks__/file-mock.js',
         '\\.(css|less|scss)$': '<rootDir>/__mocks__/file-mock.js',
     },
-    moduleDirectories: ['node_modules', '<rootDir>/node_modules', '<rootDir>/../../node_modules'],
+    moduleDirectories: ['node_modules', '<rootDir>/node_modules'],
     globals: {
         navigator: { userAgent: '' },
     },

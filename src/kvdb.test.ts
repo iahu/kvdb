@@ -93,7 +93,7 @@ describe('kvdb', function () {
     });
 
     describe('add', function () {
-        it('should return the key of inputed properties when successed', async () => {
+        it('should return the key of record, if succeeded', async () => {
             expect(await kvdb.add('key', 1)).toEqual('key');
             expect(await kvdb.add(['key', 'value'], 1)).toEqual(['key', 'value']);
 
@@ -191,7 +191,7 @@ describe('kvdb', function () {
             expect(mapResult.get(1)).toEqual(2);
         });
 
-        it('should not store unclonable values', async () => {
+        it('should not store un-cloneable values', async () => {
             const fnValue = () => 1;
             expect(async () => await kvdb.add('fn', fnValue)).rejects.toThrow();
 
@@ -218,7 +218,7 @@ describe('kvdb', function () {
     });
 
     describe('get', function () {
-        it('should return the value if mathed', async () => {
+        it('should return the value if matched', async () => {
             await kvdb.add('apple', 123);
             expect(await kvdb.get('apple')).toEqual(123);
 
@@ -244,7 +244,7 @@ describe('kvdb', function () {
     });
 
     describe('remove', function () {
-        it('should return undefined if successed', async () => {
+        it('should return undefined if succeeded', async () => {
             await kvdb.set('xyz', 123);
             expect(await kvdb.remove('xyz')).toBe(undefined);
         });
@@ -334,7 +334,7 @@ describe('kvdb', function () {
                 expect(await kvdb.getAllValues()).toEqual(['a', 'b']);
             });
 
-            it('should return all keys if successed', async () => {
+            it('should return all keys if succeeded', async () => {
                 await kvdb.clear();
                 expect(
                     await kvdb.addMany([
